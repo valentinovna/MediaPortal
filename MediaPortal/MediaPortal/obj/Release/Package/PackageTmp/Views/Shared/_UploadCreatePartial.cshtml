@@ -1,0 +1,61 @@
+﻿@using MediaPortal.Models
+@using Microsoft.AspNet.Identity
+
+@model FileSystemModels
+
+@*<div class="col-md-12  btn" id="uploadButton">
+    <label class="col-md-12 upload-file-label">
+        <div class="upload-file-span"></div>
+        <span>Загрузить файл</span>
+        <input class="col-md-12 file-upload" type="file">
+    </label>
+</div>*@
+@Html.Partial("_FilesToUploadPartial", new FilesToUploadModels() { UserID = User.Identity.GetUserId(), ParrentID = Model.ParentId, Files = new List<HttpPostedFileWrapper>() })
+
+<div class="col-md-12  btn" id="folderCreateButton" data-toggle="modal" data-target="#folderModal">Создать папку</div>
+
+<div class="modal fade" id="folderModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content col-md-offset-2 col-md-8 modal-content-tag">
+            <div class="row">
+                <div class="col-md-12 row-tag">
+                    <div class="modal-header modal-header-tag">
+                        <h4 class="modal-title modal-title-tag"><strong>Создать папку</strong></h4>
+                    </div>
+                    <div class="modal-body modal-body-tag">
+                        @using (Html.BeginForm("CreateFolder", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.HiddenFor(m => m.ParentId)
+                            
+                            <div class="col-md-12 col-md-offset-1 modal-create-folder">
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @id = "registerInput", @placeholder = "Название папки", @maxlength = "50" })
+                                @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                            </div>
+                            
+                            <div class="col-md-6 col-md-offset-8">
+                                <button type="submit" class="btn" id="createFolderButton">Создать</button>
+                            </div>
+                           
+                        }
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="col-md-12 move-file-system move-file-system-hidden" id="move" data-parent-id=@Model.ParentId>
+    <div class="col-md-12 move-file-system-title">
+        <div class="row">
+            <div class="col-md-6 move-padding ">
+                Выбрано объектов:
+            </div>
+            <div class="col-md-2 col-md-offset-1 move-padding move-file-system-count" id="move-count"> </div>
+        </div>
+    </div>
+    <div class="col-md-12  btn" id="moveButton">Переместить</div>
+    <div class="col-md-12  btn" id="moveCancelButton">Отменить</div>
+</div>

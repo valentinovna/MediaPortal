@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/LogoLayout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-12 registerText">Вы успешно зарегистрированы</div>
+            <div class="col-md-8 col-md-offset-2 text-center">
+                Теперь вы можете начать использование LOGO!
+                Загружайте свои файлы и делитесь ими
+                с остальными пользователями!
+            </div>
+            @Html.Partial("_UploadCreatePartial") 
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "404";
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <title>Ошибка 404</title>
+
+</head>
+<body id="GlobalBackground">
+
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-10 col-md-offset-1 error500Padd">
+                <div class="col-md-2 col-md-push-1 " id="defaultLogo">
+                    logo
+                </div>
+                <div class="col-md-8 col-md-offset-1">
+                    <div class="col-md-12  error500PaddBady">
+                        404 Страницу не найдено 
+                    </div>
+                    <div class="col-md-12  error500PaddBady">
+                        Не удалось найти запрошенный URL
+                    </div>                    
+                    <div class="col-md-12  error500PaddBady">
+                        @*<div class="btn btn-primary error500PaddBtn-primary">*@
+                        @Html.ActionLink("Перейти на домашнюю страницу", "UserFiles", "Home", routeValues: null, htmlAttributes: new { @class = "btn btn-primary error500Btn-primary" })
+                        @*</div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</body>
+</html>
+
+
+

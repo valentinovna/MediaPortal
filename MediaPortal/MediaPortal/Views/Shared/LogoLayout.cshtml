@@ -1,0 +1,430 @@
+﻿@{
+    ViewBag.Title = "LogoLayout";
+    Layout = null;
+}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body id="GlobalBackground">
+
+
+    <div class="firstHeaderBlock">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+
+
+                    @using (Html.BeginForm("SearchFiles", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="input-group input-group-sm" id="customSearch">
+                            <span class="input-group-addon" id="sizing-addon"><span class="IconSearch"></span></span>
+                            <input type="text" name="searchValue" class="form-control" placeholder="Поиск файлов" aria-describedby="sizing-addon" id="customSearchTextBox">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-cast" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span id="iconSearchFilter"></span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" id="searchDropDown">
+                                    <button class="btn dropdown-item textUsual dropDownButton" id="searchByName">Поиск по файлам</button>
+                                    <div role="separator" class="dropdown-divider"></div>
+                                    <button class="btn dropdown-item textUsual dropDownButton" id="searchByTags">Поиск по тегам</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+
+
+
+                </div>
+                <div class="col-md-2 col-md-offset-1" id="defaultLogo">logo</div>
+                <div class="col-md-5">@Html.Partial("_LoginPartial")</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="secondHeaderBlock">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 breadcrumb-text">@Html.ActionLink("Мои файлы", "UserFiles", "Home", new { folderID = string.Empty }, new { @class = "route-link" }) @RenderSection("userRoutes", required: false) </div>
+
+                <div class="col-md-6 col-md-push-1">
+                    <div class="btn col-md-4 textUsual userSettings" data-toggle="modal" data-target="#accessesFolderModal">
+                        Настройки доступа
+                    </div>
+                    <div class="col-md-4 userSettings">
+                        <button type="button" id="mainDropDownButton" class="btn dropdown-toggle textUsual" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Сортировка <span id="iconSortFilter"></span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <button class="btn dropdown-item textUsual dropDownButton" id="sortByCreationDate" onclick="SortByCreationDate()">По дате создания</button>
+                            <div role="separator" class="dropdown-divider"></div>
+                            <button class="btn dropdown-item textUsual dropDownButton" id="sortByUploadDate" onclick="SortByUploadDate()">По дате добавления</button>
+                            <div role="separator" class="dropdown-divider"></div>
+                            <button class="btn dropdown-item textUsual dropDownButton" id="sortBySize" onclick="SortBySize()">По размеру</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 view-style-switches">
+                        <div class="btn buttonList"></div>
+                        <div class="btn buttonTile"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade " id="accessesFolderModal" role="dialog">
+        <div class="modal-dialog ">
+            <div class="modal-content col-md-8 col-md-offset-2 accsseseContainer accsseseCastomPad accsseseContainerCastomPad">
+                <div class="modal-header col-md-12 accssese-titleCast">
+                    Настройки доступа
+                </div>
+                <div class="modal-body col-md-12 accsseseCastomPad ">
+                    <div class="col-md-12 accssese-userCast">
+                        Пользователи
+                    </div>
+                    <div class="col-md-12 accsseseBady accssese-paddCast">
+                        <div class="col-md-7 accsseseBady accssese-userInputCast">
+                            <input type="text" class="form-control accssese-textAreaCast" maxlength="200">
+                        </div>
+                        <div class="col-md-5 accssesecastomPadBot ">
+                            <div class="btn accssese-btn-primary">
+                                Добавить
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer col-md-12 accsseseCastomPad accssese-urlTopCast">
+
+                    <div class="col-md-7 accssese-urlCast" id="accsseseLinkName">
+                        Доступ по ссылке
+                    </div>
+                    <div class="col-md-7" id="acc-link">
+                        <input type="text" class="form-control accssese-textAreaCast" id="accsseseLink">
+                    </div>
+                    <div class="col-md-5 accssesecastomPadBot ">
+                        <div class="btn accssese-btn-primary" onclick="OpenLinkAccess()" id="OpenLinkAccess">
+                            Включить
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-2 hide" id="rmenu-folder-case">
+        <div class="col-md-9 rmenu" id="rmenu-folder">
+            <ul class="rmenu-ul">
+                <li class="rmenu-li" id="rename-folder" data-toggle="modal" data-target="#ModalRename">Переименовать</li>
+                <li class="rmenu-li" id="add-tag" data-toggle="modal" data-target="#ModalTag">Добавить тег</li>
+                <li class="rmenu-li" id="zip-download" onclick="DownloadFileSystem()">Скачать ZIP-архив</li>
+                <li class="rmenu-li" id="folder-move" onclick="MoveFileSystem()">Переместить</li>
+                <li class="rmenu-li" id="folder-delete" data-toggle="modal" data-target="#ModalDelete">Удалить папку</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-2 hide" id="rmenu-file-case">
+        <div class="col-md-9 rmenu" id="rmenu-file">
+            <ul class="rmenu-ul">
+                <li class="rmenu-li" id="rename-file" data-toggle="modal" data-target="#ModalRename">Переименовать</li>
+                <li class="rmenu-li" id="add-tag" data-toggle="modal" data-target="#ModalTag">Добавить тег</li>
+                <li class="rmenu-li" id="file-download" onclick="DownloadFileSystem()">Скачать файл</li>
+                <li class="rmenu-li" id="folder-move" onclick="MoveFileSystem()">Переместить</li>
+                <li class="rmenu-li" id="file-delete" data-toggle="modal" data-target="#ModalDelete">Удалить файл</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal fade " id="ModalDelete" role="dialog">
+        <div class="modal-dialog ">
+            <div class="modal-content col-md-offset-2 col-md-8  ModalDeleteww">
+                <div class="modal-body col-md-12 col-md-offset-1  ModalDeleterr">
+                    <h4 class="col-md-12 ModalDeleterr1">
+                        Вы уверенны, что хотите <br>удалить этот файл?
+                    </h4>
+                    <div class="col-md-12 ">
+                        <div class="row ModalDeleterr ModalDeleterr1">
+                            <div class="btn col-md-5 ModalDelete-btn-no" data-dismiss="modal">Ой нет!</div>
+                            <div class="btn col-md-5 col-md-offset-1 ModalDelete-btn-del" data-dismiss="modal" onclick="DeleteFileSystem();">Да, удалить!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ModalTag" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content col-md-offset-2 col-md-8 modal-content-tag">
+                <div class="row">
+                    <div class="col-md-12 row-tag">
+                        <div class="modal-header modal-header-tag">
+                            <h4 class="modal-title modal-title-tag"><strong>Добавить тег</strong></h4>
+                        </div>
+                        <div class="modal-body modal-body-tag">
+                            <textarea class="form-control form-control-tag" id="text-tag" maxlength="200"></textarea>
+                        </div>
+                        <div class="modal-footer modal-footer-tag">
+                            <div class="row">
+                                <div class="col-md-6 row-tag2">
+                                    <div>Максимальная</div><div class="tag-count">длина тега - 200</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-tag" data-dismiss="modal" onclick="AddTag()">Добавить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ModalRename" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content col-md-offset-2 col-md-8 modal-content-tag">
+                <div class="row">
+                    <div class="col-md-12 row-tag">
+                        <div class="modal-header modal-header-tag">
+                            <h4 class="modal-title modal-title-tag"><strong>Переименовать</strong></h4>
+                        </div>
+                        <div class="modal-body modal-body-tag">
+                            <textarea class="form-control form-control-tag" id="text-rename" maxlength="50"></textarea>
+                        </div>
+                        <div class="modal-footer modal-footer-tag">
+                            <div class="row">
+                                <div class="col-md-6 row-tag2">
+                                    <div>Максимальная</div><div class="tag-count">длина имени - 50</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-tag" data-dismiss="modal" onclick="Rename()">Переименовать</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-2 col-md-offset-3 ZIPdownload-modalCast ZIPdownload-ModalHide" id="ZIPdownload">
+        <div class="col-md-12 zip-process-titleCast" id="info-modal-title">
+            Подготовка
+        </div>
+        <div class="col-md-12 zip-process-textCast">
+            <div class="col-md-8 zip-process-text1Cast" id="info-modal-text">
+                Создание архива..
+            </div>
+            <div class="col-md-4 zip-process-text2Cast">
+                <span id="loadingIcon"></span>
+                <span id="okIcon"></span>
+                <span id="failIcon"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 ZIPdownload-ModalHide" id="delete-lock"></div>
+
+    @*<header id="HomeHeader">
+            <div id="topContainer" class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div id="custom-search">
+                            <button><i></i></button>
+                            <input type="text" placeholder="Поиск файлов">
+                            <div id="dropdown">↓</div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-md-offset-1 text-center" id="logo">
+                        logo
+                    </div>
+                    <div id="loginSectionBlock">
+                        @Html.Partial("_LoginPartial")
+                    </div>
+
+                </div>
+            </div>
+            <hr>
+            <div id="secondContainer" class="container">
+                <div class="row">
+                    <div id="UserRouteFolder" class="col-md-6 ">Мои файлы</div>
+                    <div class="col-md-6 ">
+                        <div id="ViewOption" class="col-md-5 ">Настройки доступа</div>
+                        <div id="ViewOption" class="col-md-4 ">По дате создания ↓</div>
+                        <div id="ViewOption" class="col-md-3 ">
+                            <div class="btn btn-info">1</div>
+                            <div class="btn btn-info">2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr id="shadowHr">
+        </header>*@
+
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+
+        $("#mainDropDownButton").click(function () {
+            //$(this).toggleClass("active");
+        });
+
+        $(".FileSystemListItem").dblclick(function () {
+            //alert("hello");
+
+        });
+        $(".FileSystemListItem").click(function () {
+            //alert("hello");
+            $(this).find("#iconFolder").toggleClass("folderActive");
+            $("downloadHiddenButton").toggle();
+        });
+        $(".buttonList").click(function() {
+            document.cookie = "viewType=List" + "; " + "domain=;path=/";
+            location.reload();
+        })
+        $(".buttonTile").click(function () {
+            document.cookie = "viewType=BlockView" + "; " + "domain=;path=/";
+            location.reload();
+        })
+
+
+        $("#searchByName").click(function () {
+            document.cookie = "searchType=SearchByName" + "; " + "domain=;path=/";
+        })
+        $("#searchByTags").click(function () {
+            document.cookie = "searchType=SearchByTag" + "; " + "domain=;path=/";
+        })
+
+        $("#sortByCreationDate").click(function () {
+            var cookie = readCookie("sortType");
+            if (cookie == "sortByCreationDate") {
+                document.cookie = "sortType=sortByCreationDateDescending" + "; " + "domain=;path=/";
+            }
+            else
+            {
+                document.cookie = "sortType=sortByCreationDate" + "; " + "domain=;path=/";
+            }
+            location.reload();
+        })
+        $("#sortByUploadDate").click(function () {
+            var cookie = readCookie("sortType");
+            if (cookie == "sortByUploadDate") {
+                document.cookie = "sortType=sortByUploadDateDescending" + "; " + "domain=;path=/";
+            }
+            else
+            {
+                document.cookie = "sortType=sortByUploadDate" + "; " + "domain=;path=/";
+            }
+            location.reload();
+        })
+            $("#sortBySize").click(function () {
+                var cookie = readCookie("sortType");
+                if (cookie == "sortBySize")
+                {
+                    document.cookie = "sortType=sortBySizeDescending" + "; " + "domain=;path=/";
+                }
+                else
+                {
+                    document.cookie = "sortType=sortBySize" + "; " + "domain=;path=/";
+                }
+            location.reload();
+        })
+
+
+        if ($("#accessesFolderModal").hasClass("in"))
+        {
+            var file = 0;
+            var folder = 0;
+
+            $(".context-menu-folder").each(function (index, element) {
+                if ($(this).is(".fileSystem-list-item-folder-active")) {
+                    folder += 1;
+                };
+            });
+
+            $(".context-menu-file").each(function (index, element) {
+                if ($(this).is(".fileSystem-list-item-active")) {
+                    file += 1;
+                };
+            });
+
+            if (file > 1 || folder > 0)
+            {
+                document.getElementById("OpenLinkAccess").style.display = "none";
+            }
+        }
+
+            function readCookie(name) {
+                var nameEQ = name + "=";
+                var ca = document.cookie.split(';');
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            }
+
+        function OpenLinkAccess() {
+
+             var fileSystemId;
+
+            $(".context-menu-file").each(function (index, element) {
+                if ($(this).is(".fileSystem-list-item-active")) {
+                    fileSystemId = $(this).data("name");
+                };
+            });
+
+            $(".context-menu-file").each(function (index, element) {
+                if ($(this).is(".fileSystem-list-item-file-active")) {
+                    fileSystemId = $(this).data("name");
+                };
+            });  
+
+            $.ajax({
+                url: '@Url.Action("GiveAccessLink", "Home")',
+                type: 'POST',
+                dataType: 'json',
+                traditional: true,
+
+                data: {
+                    fileSystemId: fileSystemId
+                },
+
+                success: function (data) {
+
+                    document.getElementById("accsseseLinkName").style.display = "none";
+
+                    document.getElementById("acc-link").style.display = "block";
+                    document.getElementById("accsseseLink").style.display = "block";
+                    document.getElementById("accsseseLink").value = data;
+                }
+
+            });
+        }
+
+    </script>
+    <script type="text/javascript">
+        $("#chooseFiles").click(function (e) {
+            $("#input").click();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1435 @@
+﻿body {
+    background-color: #e8e9ec;
+    overflow-x:hidden;
+}
+
+.logo {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 50px;
+    font-family: "Raleway";
+    letter-spacing: 4px;
+    font-weight: 800;
+    color: rgb(29, 27, 67);
+    text-transform: uppercase;
+    line-height: 1;
+    text-align: center;
+}
+
+.greetings {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 25px;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    font-weight: 600;
+    color: rgb(153, 153, 153);
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+}
+
+#backgroundForm {
+    background-color: white;
+    position: absolute;
+    width: 360px;
+    height: 450px;
+    margin-left: 500px;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+#loginForm {
+    background-color: white;
+    box-shadow: 0 4px 2px -2px gray;
+    /*height: 600px;*/
+}
+
+.registerText {
+    padding-top: 60px;
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    color: rgb(97, 97, 97);
+    line-height: 1.286;
+    text-align: center;
+}
+
+.loginLink a {
+    text-decoration: none;
+    color: #8480da;
+    font-size: 18px;
+    text-align: center;
+}
+
+.loginLink {
+    margin-bottom: 50px;
+}
+
+#registerInput {
+    border-color: rgb(153, 153, 153);
+    border-style: solid;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /*margin-left: 50px;*/
+    height: 40px;
+    /*  width: 356px;
+  height: 56px;*/
+}
+
+#registerButton {  
+    font-size: 16px;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    color: #fefefe;
+    background-color: #4640c8;
+    font-weight: 600;
+    margin-top: 30px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    /*margin-left: 18px;
+    margin-top: 15px;*/
+    /*width: 260px;*/
+}
+
+#createFolderButton {
+    font-size: 14px;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    color: #fefefe;
+    background-color: #4640c8;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 93px;
+}
+
+#facebookRegisterButton {
+    font-size: 16px;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    color: rgb(97, 97, 97);
+    border-width: 1px;
+    border-color: rgb(97, 97, 97);
+    border-radius: 5px;
+    background-color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    /*margin-left: 50px;*/
+    /*width: 280px;*/
+}
+
+    #facebookRegisterButton #IconFB {
+        content: url(/Content/icons/facebook.svg);
+        height: 16px;
+        width: 16px;
+        margin-right: 10px;
+    }
+
+/* Main layout */
+
+.firstHeaderBlock {
+    background-color: #ffffff;
+    /* box-shadow: 0 4px 2px -2px gray; */
+    margin-bottom: 2px;
+    /*padding-bottom: 10px;*/
+}
+
+#customSearch {
+    margin-top: 13px;
+    background-color: #e1e1e3;
+}
+
+#customSearch input[type="text"] {
+    background-color: #e1e1e3;
+}
+    /*.custom-search {
+    background-color: #e1e1e3;
+    border: 1px solid gray;
+    border-radius: 2px;
+    height: 42px;
+}
+
+    .custom-search input[type="text"] {
+        background-color: #e1e1e3;
+        border: none;
+    }*/
+
+.IconSearch {
+    content: url(/Content/icons/search.svg);
+    height: 18px;
+    width: 18px;
+    margin-right: 5px;
+    padding-left:5px;
+}
+.IconSearch:hover {
+    /*content: url(/Content/)*/
+}
+
+#iconSearchFilter {
+    content: url(/Content/icons/next.svg);
+    height: 10px;
+    width: 10px;
+    padding: 0px;
+    margin-right: 5px;
+    padding:0px;
+    margin-right:5px;
+    /*margin-right: 10px;*/
+    /*padding-left:20px;*/
+    -webkit-transform: rotate(90deg); /* Chrome y Safari */
+    -moz-transform: rotate(90deg); /* Firefox */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); /* Internet Explorer */
+    -o-transform: rotate(90deg); /* Opera */
+}
+
+#icon-href-delimiter {
+    content: url(/Content/icons/next.svg);
+    height: 11px;
+    width: 15px;
+    /*margin-right: 10px;*/
+    /*-webkit-transform: rotate(90deg); /* Chrome y Safari */
+    -moz-transform: rotate(90deg); /* Firefox */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); /* Internet Explorer */
+    -o-transform: rotate(90deg); /* Opera */
+}
+#searchDropDown {
+    left: -5px;
+    margin: -15px 0 0;
+}
+
+.zero-search-result {
+    margin-top:120px;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    color: grey;
+    text-align: center;
+    text-decoration: none;
+}
+
+.user-dropdown {
+    margin-top:7px;
+    background-color:white;
+}
+
+    .user-dropdown:hover {
+        background-color: lightgrey;
+    }
+
+
+#iconSortFilter {
+    content: url(/Content/icons/next.svg);
+    height: 10px;
+    width: 10px;
+    margin-left: 10px;
+    -webkit-transform: rotate(90deg); /* Chrome y Safari */
+    -moz-transform: rotate(90deg); /* Firefox */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); /* Internet Explorer */
+    -o-transform: rotate(90deg); /* Opera */
+}
+
+#mainDropDownButton {
+    background-color: rgb(255,255,255);
+    margin-left: -10px;
+}
+
+
+
+button.dropDownButton {
+    background-color: rgb(255,255,255);
+}
+
+#sortByCreationDate:hover, #sortByUploadDate:hover, #sortBySize:hover {
+    width:auto;
+    background-color: lightgray;
+}
+
+.active {
+    background-color: black;
+}
+
+.view-style-switches {
+    padding-left:5px;
+}
+
+.btn.buttonList {
+    background: url(/Content/icons/list.svg) no-repeat;
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+    .btn.buttonList:hover {
+        background-color: lightgray;
+    }
+
+.btn.buttonTile {
+    background: url(/Content/icons/tile.svg) no-repeat;
+    height: 30px;
+    width: 30px;
+}
+
+    .btn.buttonTile:hover {
+        background-color: lightgray;
+    }
+
+.textUsual {
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    color: grey;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.textUsual:hover {
+    text-decoration: none;
+    color: black;
+}
+
+#defaultLogo {
+    font-size: 34px;
+    font-family: "Raleway-ExtraBold";
+    letter-spacing: 4px;
+    color: rgb(29, 27, 67);
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.secondHeaderBlock {
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px 0px #c4c4c4;
+    margin-top: 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.route-link {
+    font-family: "Raleway-Bold";
+    letter-spacing: 0.7px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #3d3d3d;
+}
+
+.route-link:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #3d3d3d;
+}
+
+
+#userRoutes {
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    font-size: 20px;
+    text-decoration: none;
+}
+#userRoutes:hover {
+    cursor:pointer;
+    text-decoration:none;
+}
+
+.userSettings {
+    border-right: 1px solid #e8e9ec;
+}
+
+.upload-create-panel {
+    padding-right: 0px;
+    padding-left: 20px;
+}
+
+.upload-create-panel-margin {
+    margin-top: 20px;
+}
+
+#uploadButton {
+    font-size: 14px;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    color: rgb(255, 255, 255);
+    background-color: #514bc8;
+    margin-top: 7px;
+    padding: 0;
+    padding-top: 11px;
+    height: 45px;
+}
+
+#close-modal-upload {
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    color: gray;
+    background-color: white;
+    border-color: #514bc8;
+}
+
+#uploadFiles {
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    color: rgb(255, 255, 255);
+    background-color: #514bc8;
+}
+
+.modal-content-upload {
+    margin-top:50px;
+    padding-left: 0px;
+    padding-right: 0px;
+    height: 490px;
+}
+
+#file-list-upload {
+    margin: 0px;
+    margin-top: -25px;
+    padding: 0px;
+    height: 150px;
+    overflow-y:auto;
+    
+}
+
+.upload-element {
+    border-bottom: 1px solid gray;
+    padding-top: 10px;
+    padding-bottom: 3px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 20px;
+    padding-right: 0px;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    color: grey;
+}
+
+    .upload-element:hover {
+        background-color: lightgray;
+
+    }
+
+.upload-element-body {
+    margin-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#dropContainer {
+    position: sticky;
+    border: 3px dashed lightgrey;
+    height: 110px;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    margin-top: 10px;
+    margin-bottom:30px;
+    margin-left: 35px;
+    margin-right: 35px;
+    text-align: center;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+}
+
+.text-danger-upload {
+    margin:0px;
+    padding:0px;
+}
+
+#chooseFiles:hover {
+    cursor: pointer;
+}
+#input {
+    display: none;
+}
+
+.modal-header-upload {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    background-color: dimgray;
+    text-align: center;
+    color: white;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+}
+
+.modal-body-upload {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.close-upload {
+    padding-right: 15px;
+}
+
+form .upload-form {
+    height: 250px;
+}
+
+.text-danger-upload {
+    margin-top:-25px;
+    margin-left:30px;
+}
+
+.modal-footer-upload {
+    display: block;
+    border: none;
+    padding-bottom: 0px;
+    margin-right: 20px;
+    margin-top: -15px;
+    /*margin-top:180px;*/
+}
+
+
+#folderCreateButton {
+    font-size: 14px;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    color: black;
+    border-width: 2px;
+    border-color: #514bc8;
+    border-style: solid;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding-top: 11px;
+    height: 45px;
+}
+
+.file-upload {
+    opacity: 0;
+    cursor: pointer;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    height: 7px;
+}
+
+.upload-file-label {
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.upload-file-span {
+    height: 7px;
+}
+
+
+/* User partial */
+#userImage {
+    content: url(/Content/icons/userImage.png);
+    height: 40px;
+    width: 40px;
+}
+
+#logoutForm {
+    padding-top: 6px;
+    margin-bottom: 0;
+}
+
+/* FileSystemView*/
+.list-view-name-title {
+    padding-left: 40px;
+    color: gray;
+}
+.list-view-tag-title {
+    padding-left: 130px;
+    color: gray;
+}
+
+.list-view-files {
+    padding-left:0px;
+    padding-right:0px;
+}
+
+.list-view-files-margin {
+    margin-right: 95px;
+}
+
+.icon-place {
+    padding-right:0px;
+    margin-right:-15px;
+}
+
+.fileSystem-list-item-folder {
+    border-radius: 5px;
+    padding-top: 9px;
+    padding-bottom: 3px;
+    padding-left: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: white;
+    height: 45px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: 0px 2px 5px 0px #c4c4c4;
+}
+
+.element-name {
+    padding-left:0px;
+}
+
+.fileSystem-list-item-folder .element-name {
+    padding-top:5px;
+}
+.fileSystem-list-item {
+    border-radius: 5px;
+    padding-top: 7px;
+    padding-bottom: 3px;
+    padding-left: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: white;
+    height: 45px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: 0px 2px 5px 0px #c4c4c4;
+}
+    .fileSystem-list-item-folder:hover {
+        background-color: lightgray;
+        cursor: pointer;
+    }
+
+.fileSystem-list-item-folder-active {
+
+}
+
+
+.fileSystem-list-item .element-name{
+    padding-top:5px;
+}
+
+.fileSystem-list-item:hover {
+    background-color: lightgray;
+}
+.fileSystem-list-item-active {
+
+}
+
+.fileSystem-list-item-file-active {
+
+}
+
+#folderActive {
+    content: url(/Content/icons/folder-purp.svg);
+}
+
+.iconFolder {
+    content: url(/Content/icons/folder.svg);
+    height: 25px;
+    width: 25px;
+    padding-top:5px;
+}
+
+.iconFolder-none {
+    display: none;
+}
+
+.iconFolderActive {
+    content: url(/Content/icons/folder-purp.svg);
+    height: 25px;
+    width: 25px;
+    padding-top: 5px;
+}
+
+.iconFolderActive-none {
+    display: none;
+}
+
+.iconSuccess {
+    content: url(/Content/icons/success.svg);
+    height: 25px;
+    width: 25px;
+    padding-top: 5px;
+    margin-right:10px;
+    z-index: 1000;
+}
+
+.iconMinus {
+    content: url(/Content/icons/minus.svg);
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+    padding-top: 5px;
+    z-index: 1000;
+}
+
+
+.iconFile {
+    content: url(/Content/icons/picture.svg);
+    height: 25px;
+    width: 25px;
+    padding-top: 5px;
+    z-index: 1000;
+}
+
+.iconFile-none {
+    display: none;
+}
+
+.iconFileActive {
+    content: url(/Content/icons/picture-purp.svg);
+    height: 25px;
+    width: 25px;
+    padding-top: 5px;
+    z-index: 1000;
+}
+
+.iconFileActive-none {
+    display: none;
+}
+
+.iconFile-none {
+    display: none;
+}
+
+.iconVideo {
+    content: url(/Content/icons/video-player.svg);
+    height: 25px;
+    width: 25px;
+    padding-top: 5px;  
+}
+
+.iconVideo-none {
+    display: none;
+}
+
+.iconVideoActive {
+    content: url(/Content/icons/video-player-purp.svg);
+    height: 25px;
+    width: 25px;
+    padding-top: 5px;
+}
+
+.iconVideoActive-none {
+    display: none;
+}
+
+.file-name-list-item {
+    padding-top: 5px;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    font-size: 13px;
+    padding-left: 0px;
+    color: grey;
+}
+
+.file-name-list-item-active {
+    color: #514bc8;
+}
+
+.file-title-margin {
+    margin-top: 20px;
+}
+
+.file-tag-list-item {
+    padding-top: 5px;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    font-size: 13px;
+    color: grey;
+}
+
+#downloadHiddentButton 
+{
+    display:none;
+}
+
+.file-block-item {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-right: 25px;
+    margin-top: 4px;
+}
+
+.caption {
+    overflow:hidden;
+    text-align:justify;
+    word-wrap:normal;
+    white-space:nowrap;
+}
+
+.file-name {
+    display:inline-block;
+}
+
+.image-video-block-item {
+    height: 180px;
+}
+
+#FileSystemBlockItem {
+    border:1px solid black;
+    border-radius:8px;
+    height:150px;
+    margin-right:15px;
+}
+#fileBlockTitle {
+background-color:white;
+}
+
+#thumbnailImage {
+}
+.error500Padd {
+    padding-top: 20%;
+}
+
+.error500PaddTitle {
+    padding-top: 5%;
+}
+
+.error500PaddBady {
+    padding-top: 1%;
+}
+
+.error500PaddBtn-primary {
+    background-color: #4640c8;
+    border-color: #4640c8;
+}
+
+
+
+.accsseseContainer {
+    background-color: white;
+    border-radius: 5px;
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+.accsseseBady {
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+.accsseseCastomPad {    
+    padding-left: 0%;
+    padding-right: 0%;
+    text-align: left;
+}
+
+.accsseseContainerCastomPad {
+    margin-top: 30%;
+}
+
+.accssesecastomPadBot {
+    padding-left: 5%;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    font-size: 13px;
+}
+
+.accssese-btn-primary {
+    background-color: #4640c8;
+    border-color: #4640c8;
+    color: white;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    font-size: 13px;
+}
+
+.accssese-btn-primary:hover {
+    color: white;
+}
+
+#acc-link {
+    display: none;
+    padding-left: 7%;
+    padding-right: 0%;
+}
+
+.accssese-textAreaCast {
+    resize: none;
+    border: 1px rgb(153, 153, 153) solid;
+    box-shadow: none;
+    width: 100%;
+    color: rgb(100, 100, 100);
+}
+
+.accssese-titleCast {
+    color: white;
+    background-color: rgb(100, 100, 100);
+    padding-top: 4%;
+    padding-left: 7%;
+    padding-bottom: 4%;
+    font-family: "Raleway-Medium";
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.accssese-userCast {
+    color: rgb(153, 153, 153);
+    padding-top: 0%;
+    padding-left: 7%;
+    padding-bottom: 3%;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    font-weight: 600;
+}
+
+.accssese-userInputCast {
+    padding-top: 0%;
+    padding-left: 7%;
+    padding-bottom: 0%;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    font-weight: 600;
+}
+
+.accssese-paddCast {
+    padding-bottom: 5%;
+}
+
+.accssese-urlTopCast {
+    padding-top: 7%;
+    padding-bottom: 6%;
+}
+
+.accssese-urlCast {
+    color: rgb(153, 153, 153);
+    padding-left: 7%;
+    padding-top: 2%;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    font-weight: 600;
+}
+
+.thumbnail {
+    padding: 0px;
+    border-radius: 10px;
+    box-shadow: 0 4px 2px -2px gray;
+    margin-bottom: 0px;
+}
+.thumbnail img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 150px;
+    width: 100%;
+}
+
+#rmenu-folder-case {
+    z-index: 1000;
+}
+
+#rmenu-file-case {
+    z-index: 1000;
+}
+
+.ModalDeleterr {
+    margin: 0;
+    text-align: center;
+}
+
+.ModalDeleterr1 {
+    margin-top: 15px;
+    color: #898989;
+    padding-left: 10px;
+    text-align: center;
+    font-family: "Raleway-Medium";
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.ModalDeleteww {
+    padding-bottom: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 35%;
+}
+
+.ModalDelete-btn-del {
+    font-size: 14px;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    color: #898989;
+    border-width: 2px;
+    border-color: #514bc8;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+.ModalDelete-btn-no {
+    font-size: 14px;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    color: rgb(255, 255, 255);
+    background-color: #514bc8;
+}
+
+.hide {
+    display: none;
+}
+
+.rmenu {
+    background-color: white;
+    border-radius: 5px;
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: -2px 2px 6px -2px #969696;
+}
+
+.rmenu-ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    color: rgb(153, 153, 153);
+}
+
+.rmenu-li {
+    list-style: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-bottom: 1px solid #e8e9ec;
+    cursor: pointer;
+}
+
+.rmenu-li:hover {
+    background-color: #eeeeee;
+}
+
+
+.modal-content-tag {
+    margin-top: 35%;
+}
+
+.row-tag {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.modal-header-tag {
+    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: none;
+}
+
+.modal-title-tag {
+    color: #898989;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+}
+
+.modal-body-tag {
+    padding: 0px;
+}
+
+.form-control-tag {
+    resize: none;
+    border: 1px #898989 solid;
+    box-shadow: none;
+    height: 87px;
+    height:initial;
+}
+
+.modal-footer-tag {
+    border-top: none;
+    padding: 0px;
+    padding-top: 13px;
+    padding-bottom: 14px;
+    margin-top: 0;
+}
+
+.row-tag2 {
+    text-align: left;
+    color: #898989;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    font-size: 9px;
+    line-height: 8px;
+}
+
+.tag-count {
+    margin-top: 6px;
+}
+
+.btn-tag {
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    height: 40px;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    background-color: #514bc8
+}
+
+.btn-tag:hover {
+    color: rgb(255, 255, 255);
+}
+
+#delete-lock {
+    position: absolute;
+    display: block;
+    z-index: 999;
+    height: 100%;
+}
+
+.ZIPdownload-ModalHide {
+    visibility: hidden
+}
+
+.ZIPdownload-ModalShow {
+    visibility: visible
+}
+
+.ZIPdownload-modalCast {
+    position: fixed;
+    display: block;
+    bottom: 1%;
+    right: 1%;
+    z-index: 1000;
+    padding: 0;
+    background: red;
+    height: 80px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: -2px 2px 6px -2px #969696;
+}
+
+.zip-process-titleCast {
+    color: white;
+    background-color: rgb(100, 100, 100);
+    padding-top: 3%;
+    padding-left: 10%;
+    padding-bottom: 3%;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+}
+
+.zip-process-textCast {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 10%;
+    padding-right: 0;
+}
+
+.zip-process-text1Cast {
+    color: rgb(100, 100, 100);
+    padding-top: 6%;
+    padding-bottom: 3%;
+    padding-left: 0;
+    padding-right: 0;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+}
+
+.zip-process-text2Cast {
+    color: rgb(100, 100, 100);
+    padding-top: 2%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#loadingIcon {
+    content: url(/Content/icons/processing.gif);
+    height: 35px;
+    width: 35px;
+}
+
+#okIcon {
+    content: url(/Content/icons/ok.png);
+    height: 35px;
+    width: 35px;
+    display: none;
+}
+
+#failIcon {
+    content: url(/Content/icons/failed.png);
+    height: 35px;
+    width: 35px;
+    display: none;
+}
+
+.failIcon {
+    content: url(/Content/icons/failed.png);
+    height: 25px;
+    width: 25px;
+    padding-top: 5px;
+}
+
+#moveButton {
+    font-size: 14px;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    color: black;
+    padding: 0;
+    border-width: 2px;
+    border-color: #514bc8;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+#moveCancelButton {
+    font-size: 14px;
+    font-family: "Raleway";
+    color: rgb(255, 255, 255);
+    padding: 0;
+    background-color: #514bc8;
+    margin-top: 2px;
+}
+
+.move-file-system {
+    margin-top: 45px;
+    padding: 0;
+    border-radius: 10px;
+    visibility: visible;
+}
+
+.move-file-system-hidden {
+    visibility: hidden;
+}
+
+.move-padding {
+    padding: 5px;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+}
+
+.move-file-system-count {
+    margin-top: 9px;
+}
+
+/* ViewFile */
+#view-form {
+    margin-top:120px;
+    background-color:white;
+    border-radius:5px;
+    border-bottom:1px solid gray;
+}
+
+#top-objects {
+    margin-top:15px;
+    padding:0px;
+    float:left;
+}
+
+#file-title {
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    font-weight: 400;
+    font-size: 20px;
+    padding: 0px;
+}
+
+#buttonDownload {
+    margin-top:10px;
+}
+
+#file-size {
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 0px;
+}
+
+#thumbnail {
+    margin-top: 20px;
+    display: inline-block;
+}
+
+    #thumbnail img {
+        width:100%;
+    }
+
+#playButton {
+    content: url(/Content/icons/icon-play.svg);
+    height: 80px;
+    width: 80px;
+    position: fixed;
+    display: block;
+    z-index: 1000;
+    padding: 0;
+    /*/*position: absolute;*/
+    z-index: 1000;
+    margin-left: 120px;
+    margin-top: -205px;
+    /*position: absolute;
+    
+    */
+}
+
+#tags {
+    padding-top: 10px;
+    padding-left: 0px;
+    font-size: 16px;
+    color: grey;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    margin-bottom: 15px;
+}
+
+#accsseseLink {
+    display: none;
+}
+
+#close-view {
+    content: url(/Content/icons/cancel.svg);
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    margin-left: 820px;
+    margin-top: 50px;
+    opacity: 0.5;
+}
+
+    #close-view:hover {
+        opacity: 1;
+    }
+
+#view-file-left {
+    content: url(/Content/icons/next.svg);
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left:300px;
+    margin-top: 310px;
+    opacity: 0.5;
+    -webkit-transform: rotate(180deg); /* Chrome y Safari */
+    -moz-transform: rotate(180deg); /* Firefox */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1); /* Internet Explorer */
+    -o-transform: rotate(180deg); /* Opera */
+}
+
+    #view-file-left:hover {
+        opacity: 1;
+    }
+
+#view-file-right {
+    content: url(/Content/icons/next.svg);
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right:300px;
+    margin-top: 310px;
+    opacity: 0.5;
+}
+
+    #view-file-right:hover {
+        opacity: 1;
+}
+
+.modal-create-folder{
+    margin: 0;
+    padding: 0;
+}
+
+.file-block-item-margin {
+    margin-bottom: 30px;
+}
+
+.title-grey {
+    color: grey;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+}
+
+.breadcrumb-text {
+    padding-top: 5px;
+}
+
+
+#cangePassForm {
+    padding-left: 198px;
+}
+
+#cangePassTitle {
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-weight: 600;
+}
+
+.control-label-custom {
+    width: 190px;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+}
+
+.change-password-btn {
+    width: 190px;
+    margin-top: 30px;
+    margin-left: 80px;
+}
+
+.firstHeaderBlock-simple {
+    box-shadow: 0px 2px 5px 0px #c4c4c4;
+}
+
+.route-link-home {
+    padding-top: 5px;
+}
+
+.breadcrumb-text-home {
+    padding-top: 12px;
+    padding-left: 0;
+}
+
+.text-danger-cast {
+    padding-left: 165px;
+}
+
+.text-success-cast {
+    padding-left: 190px;
+}
+
+#sizing-addon {
+    border: none;
+    background-color: #e1e1e3;
+}
+
+#customSearch {
+    border-radius: 5px;
+}
+
+#customSearchTextBox {
+    border: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-family: "Raleway-Medium";
+    letter-spacing: 0.7px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+#customSearchTextBox:focus {
+    border-color: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.dropdown-toggle-cast {
+    background-color: #e1e1e3;
+}
+
+.lighted {
+    background-color: #ebe7e7;
+    border: 3px solid dimgray !important;
+}
+
+@font-face {
+    font-family: 'Raleway-Medium';
+    src: url(/fonts/Raleway-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Raleway-ExtraBold';
+    src: url(/fonts/Raleway-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: 'Raleway-Bold';
+    src: url(/fonts/Raleway-Bold.ttf);
+}

@@ -1,0 +1,48 @@
+﻿@model MediaPortal.Models.FilesToUploadModels
+
+<div id="partial-replace">
+
+    <div class="col-md-12  btn" id="uploadButton" data-toggle="modal" data-target="#filesModal">Загрузить файлы</div>
+
+
+    <div class="modal fade" id="filesModal">
+        <div class="modal-dialog">
+            <div class="modal-content modal-content-upload col-md-8 col-md-offset-2">
+
+                <div class=" modal-header-upload">
+                    <a href="#" class="close close-upload" data-dismiss="modal">&times;</a>
+                    <h4 class="modal-title">Загрузка файлов</h4>
+
+                </div>
+                <div class="modal-body modal-body-upload col-md-12">
+                    @using (Html.BeginForm("UploadFiles", "Home", FormMethod.Post, new { @id = "upload-form", @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.HiddenFor(m => m.UserID)
+                        @Html.HiddenFor(m => m.ParrentID)
+
+                        <div id="file-list-upload">
+
+                        </div>
+                        <div class="form-group">
+                            <div id="dropContainer">
+                                Drop your files here or <a id="chooseFiles">choose them.</a>
+                            </div>
+                            @Html.TextBoxFor(m => m.Files, new { @id = "input", type = "file", enctype = "multipart/form-data", multiple = "multiple", accept = "image/x-png, image/jpeg, video/mp4" })
+                            @Html.ValidationMessageFor(x => x.Files, "", new { @class = "text-danger text-danger-upload col-md-10 col-md-offset-1" })
+                        </div>
+
+                        <div class="modal-footer modal-footer-upload">
+                            <div class="form-group">
+                                <a href="#" class="btn btn-default col-md-3 col-md-push-6" data-dismiss="modal" id="close-modal-upload">Отмена</a>
+                                <button type="submit" class="btn btn-primary col-md-3 col-md-push-6" id="uploadfiles">Готово</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

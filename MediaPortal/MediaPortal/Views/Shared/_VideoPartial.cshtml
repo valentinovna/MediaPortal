@@ -1,0 +1,7 @@
+﻿@{ 
+    var videoUrl = (string)ViewData["VideoUrl"];
+}
+
+<video width="320" height="240" controls autoplay>
+    <source src="@videoUrl" type="video/mp4"/>
+</video>

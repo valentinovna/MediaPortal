@@ -1,0 +1,93 @@
+﻿@using MediaPortal.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/LogRegLayout.cshtml";
+}
+
+
+<section>
+    <div class="col-md-4 col-md-offset-4" id="loginForm">
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+        @Html.AntiForgeryToken()
+
+        <div class="col-md-12 registerText">Войдите в аккаунт</div>
+        <div class="col-md-12 ">
+            <div class="col-md-10 col-md-offset-1 loginLink text-center">или @Html.ActionLink("Создайте аккаунт", "Register", "Account", null, new { @class = "loginLink" })</div>
+
+            <div class="form-group">
+                <div class="col-md-10 col-md-offset-1">
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @id= "registerInput", @placeholder = "Email" })
+                    @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <div class="col-md-10 col-md-offset-1">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @id= "registerInput", @placeholder = "Пароль" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10 col-md-offset-1">
+                    <button type="submit" class="btn col-md-12" id="registerButton">Войти</button>
+                </div>
+            </div>
+        </div>
+    }
+        <div class="col-md-12">
+            @{
+                using (Html.BeginForm("ExternalLogin", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <div class="col-md-10 col-md-offset-1">
+                            <button type="submit" class="btn col-md-12" id="facebookRegisterButton" name="provider" value="Facebook" title="Log in using your Facebook account"><span id="IconFB"></span>Регистрация через FB</button>
+                        </div>
+                    </div>
+
+                }
+            }
+        </div>
+    </div>
+<section />
+
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+    @*<h4>Use a local account to log in.</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    @Html.LabelFor(m => m.RememberMe)
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Log in" class="btn btn-default" />
+            </div>
+        </div>
+        <p>
+            @Html.ActionLink("Register as a new user", "Register")
+        </p>*@

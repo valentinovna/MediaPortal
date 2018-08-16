@@ -1,0 +1,35 @@
+﻿@model MediaPortal.Models.IndexViewModel
+
+@{
+    Layout = "~/Views/Shared/LogoLayoutSimple.cshtml";
+    ViewBag.Title = "Manage";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ViewFile</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+
+    <p class="text-success">@ViewBag.StatusMessage</p>
+    <div>
+        <div class="col-md-12  error500PaddBady">
+            @Html.ActionLink("Перейти на домашнюю страницу", "UserFiles", "Home", routeValues: null, htmlAttributes: new { @class = "btn btn-primary error500Btn-primary" })
+        </div>
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+    }
+
+</body>
+</html>

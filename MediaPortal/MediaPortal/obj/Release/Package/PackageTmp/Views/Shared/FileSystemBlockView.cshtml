@@ -1,0 +1,23 @@
+﻿@model MediaPortal.Models.FileSystemModels
+
+<div class="col-md-2 file-block-item file-block-item-margin">
+    <div class="col-sm-6 col-md-12 fileSystem-list-item-file context-menu-file file-block-item image-video-block-item" data-name="@Model.Id" data-file-name="@Model.Name">
+        <div class="thumbnail ">
+            @*<img src="@Model.BlobLink" alt="blobLink">*@
+            <img src='@Url.Action("GetThumbnailImage", new { fileSystemId = Model.Id })' />
+            <div class="caption">
+                @if (Model.Type.ToLower().Equals(".mp4"))
+                {
+                    <span class="iconVideo"></span>
+                    <span class="iconVideoActive iconVideoActive-none"></span>
+                }
+                else
+                {
+                    <span class="iconFile"></span>
+                    <span class="iconFileActive iconFileActive-none"></span>
+                }
+                <div class="file-name file-name-list-item">@Model.Name</div>
+            </div>
+        </div>
+    </div>
+</div>

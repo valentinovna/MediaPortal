@@ -1,0 +1,13 @@
+﻿@model MediaPortal.Models.FileSystemModels
+
+@if (Model.Type.Equals(".mp4"))
+            {
+
+    <img class="mustLoad" src="@Url.Action("GetThumbnailImage", new { fileSystemId = Model.Id })" alt="Картинка для предпросмотра еще загружается" />
+    <span id="playButton"></span>
+
+}
+else
+{
+    <img src="@Url.Action("GetImage", new { fileSystemId = Model.Id })" />
+}

@@ -1,0 +1,65 @@
+﻿@using MediaPortal.Models
+
+@model FileSystemModels
+
+@if (Model.Type.Equals("Folder"))
+{
+    <div class="col-md-12 fileSystem-list-item-folder context-menu-folder" data-name="@Model.Id" data-folder-name="@Model.Name">
+        <div class="col-md-1 icon-place">
+            <span class="iconFolder"></span> 
+            <span class="iconFolderActive iconFolderActive-none"></span> 
+        </div>
+        <div class="col-md-9 file-name-list-item">
+            @Model.Name
+            @*@Html.ActionLink("linkText","UserFiles","Home", routeValues: new { folderID = Model.Id, folderName = Model.Name },htmlAttributes: null)*@
+        </div>
+        @if (Model.Tags == null || !Model.Tags.Any())
+        {
+            <div class="col-md-2 file-tag-list-item"> Теги отсутствуют</div>
+        }
+        else
+        {
+            <div class="col-md-2 file-tag-list-item">
+                @foreach (TagModels tag in Model.Tags)
+                {
+                    <span>#@tag.Name</span>
+                }
+            </div>
+        }
+        
+    </div>
+   
+}
+else
+{
+    <div class="col-md-12 fileSystem-list-item context-menu-file" data-name="@Model.Id" data-file-name="@Model.Name" >
+        <div class="col-md-1 icon-place">
+         @if (Model.Type.ToLower().Equals(".mp4"))
+         {
+            <span class="iconVideo"></span>
+            <span class="iconVideoActive iconVideoActive-none"></span>
+         }
+         else
+         {
+            <span class="iconFile"></span>
+            <span class="iconFileActive iconFileActive-none"></span>
+         }
+        </div>
+        <div class="col-md-9 file-name-list-item">
+            @Model.Name
+            @*@Html.ActionLink("download", "DownloadFileSystemZIP", "Home", routeValues: new { fileSystemsId = Model.Id }, htmlAttributes: null)*@
+        </div>
+        @if (Model.Tags == null || !Model.Tags.Any())
+        {
+            <div class="col-md-2 file-tag-list-item"> Теги отсутствуют</div>
+        }
+        else
+        {
+            <div class="col-md-2 file-tag-list-item">
+                @foreach(TagModels tag in Model.Tags){
+                    <span>#@tag.Name</span>
+                }
+            </div>
+        }
+    </div>
+}
